@@ -1,6 +1,7 @@
 package com.example.recyclerviewcheckbox;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +68,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                         arrayList.get(getAdapterPosition()).setSelected(true);
                     } else {
                         arrayList.get(getAdapterPosition()).setSelected(false);
+                    }
+                    notifyDataSetChanged();
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        Log.d("TAG",arrayList.toString());
                     }
                 }
             });
